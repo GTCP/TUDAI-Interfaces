@@ -1,6 +1,7 @@
 "use strict";
 ejercicio_1();
 ejercicio_2();
+ejercicio_3();
 
 function ejercicio_1(){  
     let rows=100;
@@ -89,7 +90,7 @@ function promedio_de_cada_fila_en_arreglo(rows,cols,matriz){
 }
 
 function ejercicio_2(){
-        let c = document.getElementById("canvas");
+        let c = document.getElementById("canvas-ejercicio2");
         let con = c.getContext("2d");
         let width= c.width;
         let height= c.height;  
@@ -98,4 +99,30 @@ function ejercicio_2(){
 
         console.log("Ejercicio2 OFF");
        
+}
+function ejercicio_3(){
+
+    let c = document.getElementById("canvas-ejercicio3");
+    let con = c.getContext("2d");
+    let height = c.height;
+    let width = c.width;
+    let imageData = con.createImageData(c.width, c.height);
+    set_pixeles(imageData, 0, 0, 255, 255);
+    
+    function set_pixeles(image, r, g, b, a){
+        for (let i = 0; i < width; i++) {
+            for (let j = 0; j < height; j++) {
+                let index = (i+j*width)*4;
+                image.data[index+0] = r;
+                image.data[index+1] = g;
+                image.data[index+2] = b;
+                image.data[index+3] = a; 
+            }
+        }
+        con.putImageData(imageData, 0, 0 );
+    }   
+    console.log("Ejercicio3 OFF");
+}
+function ejercicio_4(){
+    console.log("Ejercicio4 OFF");
 }
