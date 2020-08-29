@@ -7,8 +7,7 @@
 				<title>TUDAI-INTERFACES</title>
                 <link rel="stylesheet" href="<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
                 <link rel="stylesheet" href="css/bootstrap.min.css">
-                <link rel="stylesheet" href="css/style.css">
-                <link rel="icon" href="css/images/icono.ico">
+                <link rel="stylesheet" href="../css/style.css">
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
                 <link rel="stylesheet" href="/fonts/simple-line-icons.min.css">
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
@@ -19,13 +18,7 @@
 						 <div class="row">
 						 </div>
 			
-						 <div class="col-3">
-							<div class="image-upload">
-								<a class="navbar-brand logo nav-link active nav-item  "href="{$BASE_URL}">
-									  <Strong>Guillermo Tomas Cesario Provenzano</Strong>
-								</a>  
-							</div>
-							</div>
+						 
 			
 							<div class="col-9">
 							<div>
@@ -51,6 +44,7 @@
 							<h2 class="text-info">Práctico 1: Manejo de Colores</h2>
 							<p>1. Repaso Javascript: Definir una matriz de 100 elementos x 100 elementos y completarla con valores enteros random, y resuelva los siguientes incisos:</p>
 						</div>
+						<div id:"matriz">Resultado:</div>
 						<div class="row justify-content-center">
 							<div class="col-md-4 feature-box"><i class="icon-star icon"></i>
 								<h4>a.</h4>
@@ -67,7 +61,8 @@
 							
 						</div>
 					</div>
-                </section>
+				</section>
+				
                 <section class="clean-block clean-info dark">
 					<div class="container">
 						<div class="block-heading">
@@ -75,7 +70,7 @@
 							<p>Pintar una región rectangular de un color utilizando el Contexto de HTML5.</p>
 						</div>
 						<div class="row align-items-center">
-							<div class="col-md-12"><img class="img-thumbnail" src="http://2.bp.blogspot.com/-6lLUfA4Jkig/Txk6NnOEF7I/AAAAAAAAACU/qLspTGYpRn4/s1600/imagen+original.JPG" /></div>
+							<canvas class="col-md-12" id="canvas" width="380" height="380" style="border:#000 solid 0.5px"></canvas>
 							
 						</div>
 					</div>
@@ -188,8 +183,15 @@
 					<p> Interfaces © 2020</p>
 				</div>
 			</footer>	
+			<div class="col-sm-3">
+				<h5>Get started</h5>
+				<ul>
+					<li><p class="matriz"></p></li>
+					
+				</ul>
 			</div>
-					<script   src="js/script.js"></script>
+			</div>
+					<script   src="../js/tp1.js"></script>
 					<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 					<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 					<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

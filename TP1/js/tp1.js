@@ -1,17 +1,21 @@
 "use strict";
+ejercicio_1();
+ejercicio_2();
 
-let rows=100;
-let cols=100;
+function ejercicio_1(){  
+    let rows=100;
+    let cols=100;
+    let matriz = [];
+    inicializar_matriz(rows,cols,matriz);
+   // let valorMaximoDeTodaLaMatriz=valor_maximo_de_toda_la_matriz(rows,cols,matriz);
+   // let valorMaximoPorFilaPares=valor_maximo_por_fila_pares(rows,cols,matriz);
+   // let valorMinimoPorFilaImpares=valor_minimo_por_fila_Impares(rows,cols,matriz);
+   // promedio_de_cada_fila_en_arreglo(rows,cols,matriz);
 
-let matriz = [];
-inicializar_matriz();
-let valorMaximoDeTodaLaMatriz=valor_maximo_de_toda_la_matriz();
-let valorMaximoPorFilaPares=valor_maximo_por_fila_pares();
-let valorMinimoPorFilaImpares=valor_minimo_por_fila_Impares();
-promedio_de_cada_fila_en_arreglo();
+    console.log("Ejercicio1 OFF");
 
-
-function inicializar_matriz(){
+}
+function inicializar_matriz(rows,cols,matriz){
     for(let i =0;i< rows; i++){
         matriz[i] = [];
         for(let j=0; j < cols ; j++){
@@ -21,7 +25,7 @@ function inicializar_matriz(){
     }
     console.log("inicializar_matriz OFF");
 }  
-function valor_maximo_de_toda_la_matriz(){
+function valor_maximo_de_toda_la_matriz(rows,cols,matriz){
     let valorMaximo=0;
     for(let i =0;i< rows; i++){
         for(let j=0; j < cols ; j++){
@@ -34,7 +38,7 @@ function valor_maximo_de_toda_la_matriz(){
     console.log("valor_maximo_de_toda_la_matriz OFF");
     return valorMaximo;
 }
-function valor_maximo_por_fila_pares(){
+function valor_maximo_por_fila_pares(rows,cols,matriz){
     let valorMaximo=0;
     for(let i =0;i< rows; i++){
         for(let j=0; j < cols ; j++){
@@ -49,7 +53,7 @@ function valor_maximo_por_fila_pares(){
     console.log("valor_maximo_por_fila_pares OFF");
     return valorMaximo;
 }
-function valor_minimo_por_fila_Impares(){
+function valor_minimo_por_fila_Impares(rows,cols,matriz){
     let valorMinimo=99;
     for(let i =0;i< rows; i++){
         for(let j=0; j < cols ; j++){
@@ -64,7 +68,7 @@ function valor_minimo_por_fila_Impares(){
     console.log("valor_minimo_por_fila_Impares OFF");
     return valorMinimo;
 }
-function promedio_de_cada_fila_en_arreglo(){
+function promedio_de_cada_fila_en_arreglo(rows,cols,matriz){
     let promedioPorFila=0;
     let promedio = [];
         for(let i =0;i< rows; i++){
@@ -84,3 +88,14 @@ function promedio_de_cada_fila_en_arreglo(){
     return promedio;
 }
 
+function ejercicio_2(){
+        let c = document.getElementById("canvas");
+        let con = c.getContext("2d");
+        let width= c.width;
+        let height= c.height;  
+        con.fillStyle = "rgb(255,0,0)";
+        con.fillRect(0, 0, width, height);  
+
+        console.log("Ejercicio2 OFF");
+       
+}
