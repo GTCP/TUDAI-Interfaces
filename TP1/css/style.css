@@ -13,6 +13,9 @@ html, body {
   width: 100%;
 }
 
+.ejercicio6{
+  margin-bottom: 10%;
+}
 canvas{
    height: 100%;
    width: 100%;
@@ -870,6 +873,11 @@ element.style {
   margin-bottom: 30px;
 }
 
+.profesores{
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
 .btn-outline-light {
   color: black;
   border-color: black;

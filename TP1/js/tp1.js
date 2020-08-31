@@ -4,6 +4,7 @@ ejercicio_2();
 ejercicio_3();
 ejercicio_4();
 ejercicio_5();
+Ejercicio_6();
 function ejercicio_1(){  
     let matriz=[];
     let rows=12;
@@ -198,4 +199,52 @@ function ejercicio_5(){
     }
     console.log("Ejercicio5 OFF");
 }
-
+function Ejercicio_6(){
+    let c=document.querySelector(".canvas-ejercicio6");
+    let con=c.getContext('2d');
+    let img=new Image();
+    let imageData;
+    img.crossOrigin="Anonymous";
+    img.src="http://4.bp.blogspot.com/-1QdTjGJEBWc/T3s--K-hskI/AAAAAAAAC-w/uk27W0ypb2c/s1600/EL-UNIVERSO-061.jpg";
+    let botonFiltro=document.getElementById("filtro").addEventListener("click",function(){
+        filtroGris(imageData);
+        con.putImageData(imageData,0,0);
+    });
+    img.onload=function(){
+        myDrawImage(this);
+        imageData=con.getImageData(0,0,c.width,c.height);
+        con.putImageData(imageData,0,0);
+    }   
+    function myDrawImage(img){
+        c.width=img.naturalWidth;
+        c.height=img.naturalHeight;
+        con.drawImage(img,0,0);
+    }
+    function filtroGris(imageData){
+        for (let x=0;x<c.width; x++){
+            for(let y=0;y<c.height;y++){
+                let r=rojo(imageData,x,y);
+                let g=verde(imageData,x,y);
+                let b=azul(imageData,x,y);
+                let f=0.2126*r+0.7152*g+0.0722*b;
+                set_pixeles(imageData,x,y,f,f,f);
+            }
+        }
+        function rojo(imageData,x,y){
+            return imageData.data[(x+y*imageData.width)*4+0];
+        }
+        function verde(imageData,x,y){
+            return imageData.data[(x+y*imageData.width)*4+1];
+        }
+        function azul(imageData,x,y){
+            return imageData.data[(x+y*imageData.width)*4+2];
+        }
+        function set_pixeles(imageData,x,y,r,g,b){
+            let index=(x+y*imageData.width)*4;
+            imageData.data[index+0]=r;
+            imageData.data[index+1]=g;
+            imageData.data[index+2]=b;
+        }
+        con.putImageData(imageData,0,0);
+    }
+}
