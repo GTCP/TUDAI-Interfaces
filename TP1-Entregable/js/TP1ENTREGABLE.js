@@ -30,20 +30,20 @@ function Entregable(){
     let botonDescargarImagen=document.getElementById("download").addEventListener("click",function(){       
         descargar_imagen();   
      });
-    let botonBorradoAlternativo=document.getElementById("limpiar").addEventListener("click",function(){       
-        c.width=c.width;
+    let botonFiltroContraste=document.getElementById("filtro-contraste").addEventListener("click",function(){       
+        filtro_contraste(imageData);  
     });
+    //let botonBorradoAlternativo=document.getElementById("limpiar").addEventListener("click",function(){       
+    //    c.width=c.width;
+    //});
     let botonBorradoAutomatico=document.getElementById("borrado-automatico").addEventListener("click",function(){       
         borrado_automatico(imageData);
-        con.putImageData(imageData,0,0);
     }); 
     let botonNegativo=document.getElementById("filtro-negativo").addEventListener("click",function(){
         filtro_negativo(imageData);
-        con.putImageData(imageData,0,0);
     });
     let botonGris=document.getElementById("filtro-gris").addEventListener("click",function(){
         filtro_gris(imageData);
-        con.putImageData(imageData,0,0);
     });
     let botonSepia=document.getElementById("filtro-sepia").addEventListener("click",function(){
         filtro_sepia(imageData);
@@ -96,7 +96,7 @@ function Entregable(){
                 let g=verde(imageData,x,y);
                 let b=azul(imageData,x,y);
                 let f=0.2126*r+0.7152*g+0.0722*b;
-                set_pixeles(imageData,x,y,f,f,f);
+                set_pixeles(imageData,x,y,r,g,b);
             }
         }
         function rojo(imageData,x,y){
@@ -123,7 +123,7 @@ function Entregable(){
                 let g=verde(imageData,x,y);
                 let b=azul(imageData,x,y);
                 let f=255;
-                set_pixeles(imageData,x,y,f,f,f);
+                set_pixeles(imageData,x,y,r,g,b);
             }
         }
         function rojo(imageData,x,y){
@@ -151,8 +151,7 @@ function Entregable(){
                     let g=verde(imageData,x,y);
                     let b=azul(imageData,x,y);
                     let f=0.2126*r+0.7152*g+0.0722*b;
-                    //set_pixeles(imageData,x,y,f,f,f);
-                    set_pixeles2(imageData,x,y,f,f,f);
+                    set_pixeles(imageData,x,y,r,g,b);
                 }
             }
             function rojo(imageData,x,y){
@@ -164,13 +163,8 @@ function Entregable(){
             function azul(imageData,x,y){
                 return imageData.data[(x+y*imageData.width)*4+2];
             }
+          
             function set_pixeles(imageData,x,y,r,g,b){
-                let index=(x+y*imageData.width)*4;
-                imageData.data[index+0]=255 - r;
-                imageData.data[index+1]=255 - g;
-                imageData.data[index+2]=255 - b;
-            }
-            function set_pixeles2(imageData,x,y,r,g,b){
                 let index=(x+y*imageData.width)*4;
                 imageData.data[index+0]=( r * .393 ) + ( g *.769 ) + ( b * .189 );
                 imageData.data[index+1]=( r * .349 ) + ( g *.686 ) + ( b * .168 );
@@ -190,6 +184,39 @@ function descargar_imagen(){
             imagen.setAttribute('style','display: none;');
             document.getElementById("download").setAttribute("href", imgTag);
         }
+    
+}
+function filtro_contraste(){
+    let C=100;
+    let FACTOR = ( 259*( C + 255 ) ) / ( 255*( 259 - C ) );
+
+
+    for (let x=0;x<c.width; x++){
+        for(let y=0;y<c.height;y++){
+            let r=rojo(imageData,x,y);
+            let g=verde(imageData,x,y);
+            let b=azul(imageData,x,y);
+            let f=0.2126*r+0.7152*g+0.0722*b;
+            set_pixeles(imageData,x,y,r,g,b);
+        }
+    }
+    function rojo(imageData,x,y){
+        return imageData.data[(x+y*imageData.width)*4+0];
+    }
+    function verde(imageData,x,y){
+        return imageData.data[(x+y*imageData.width)*4+1];
+    }
+    function azul(imageData,x,y){
+        return imageData.data[(x+y*imageData.width)*4+2];
+    }
+    function set_pixeles(imageData,x,y,r,g,b){
+        let index=(x+y*imageData.width)*4;
+        imageData.data[index+0]= FACTOR * (r - 128) + 128;
+        imageData.data[index+1]= FACTOR * (g - 128) + 128;
+        imageData.data[index+2]= FACTOR * (b - 128) + 128;
+    }
+   
+    con.putImageData(imageData,0,0);
     
 }
 }
