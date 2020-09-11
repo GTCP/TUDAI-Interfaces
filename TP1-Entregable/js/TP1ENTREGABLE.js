@@ -1,13 +1,16 @@
 "use strict";
 Entregable();
-let contadorSepia= 0;
 function Entregable(){
     let c=document.querySelector(".canvas-ejercicio");
     let con=c.getContext('2d');
     let img=new Image();
     let imageData;
+    let imagen= document.getElementById("download");
     img.crossOrigin="Anonymous";
     img.src="http://4.bp.blogspot.com/-1QdTjGJEBWc/T3s--K-hskI/AAAAAAAAC-w/uk27W0ypb2c/s1600/EL-UNIVERSO-061.jpg";
+
+    descargar_imagen
+
     //let IMAGEN= document.getElementsByClassName("uploadedfile");
     //IMAGEN[0].addEventListener('click' , showComment , false ) ; 
     function showComment(){
@@ -24,10 +27,16 @@ function Entregable(){
             con.drawImage(img,0,0);
         }
     } 
+    let botonDescargarImagen=document.getElementById("download").addEventListener("click",function(){       
+        descargar_imagen();   
+     });
+    let botonBorradoAlternativo=document.getElementById("limpiar").addEventListener("click",function(){       
+        c.width=c.width;
+    });
     let botonBorradoAutomatico=document.getElementById("borrado-automatico").addEventListener("click",function(){       
         borrado_automatico(imageData);
         con.putImageData(imageData,0,0);
-    });
+    }); 
     let botonNegativo=document.getElementById("filtro-negativo").addEventListener("click",function(){
         filtro_negativo(imageData);
         con.putImageData(imageData,0,0);
@@ -40,16 +49,18 @@ function Entregable(){
         filtro_sepia(imageData);
         con.putImageData(imageData,0,0);
     });
-img.onload=function(){
-    myDrawImage(this);
-    imageData=con.getImageData(0,0,c.width,c.height);
-    con.putImageData(imageData,0,0);
-}
-function myDrawImage(img){
-    c.width=img.naturalWidth;
-    c.height=img.naturalHeight;
-    con.drawImage(img,0,0);
-}
+    img.onload=function(){
+        myDrawImage(this);
+        imageData=con.getImageData(0,0,c.width,c.height);
+        con.putImageData(imageData,0,0);
+    }  
+        function myDrawImage(img){
+            c.width=img.naturalWidth;
+            c.height=img.naturalHeight;
+            con.drawImage(img,0,0);
+    }
+
+
    function filtro_gris(imageData){
         for (let x=0;x<c.width; x++){
             for(let y=0;y<c.height;y++){
@@ -134,7 +145,7 @@ function myDrawImage(img){
     }
   
     function filtro_sepia(){
-             {for (let x=0;x<c.width; x++){
+             for (let x=0;x<c.width; x++){
                 for(let y=0;y<c.height;y++){
                     let r=rojo(imageData,x,y);
                     let g=verde(imageData,x,y);
@@ -166,8 +177,19 @@ function myDrawImage(img){
                 imageData.data[index+2]=( r * .272 ) + ( g *.534 ) + ( b * .131 );
             }
             con.putImageData(imageData,0,0);
+   }
+function descargar_imagen(){
+        let imgTag = 0;
+        imgTag = c.toDataURL("image/png");
+        imagen.src = imgTag;
+        imagen.setAttribute('style','display: block;');
+        document.getElementById("download").setAttribute("href", imgTag);
+  
+        img.onerror = function() {
+            imagen.src = imgTag;
+            imagen.setAttribute('style','display: none;');
+            document.getElementById("download").setAttribute("href", imgTag);
         }
-
-            contadorSepia++;
-    }
+    
+}
 }
