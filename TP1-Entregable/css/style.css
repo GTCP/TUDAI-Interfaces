@@ -8,14 +8,12 @@ html {
 element.style {
 }
 
+
 html, body {
   height: 100%;
   width: 100%;
 }
 
-.ejercicio6{
-  margin-bottom: 10%;
-}
 canvas{
    height: 100%;
    width: 100%;
