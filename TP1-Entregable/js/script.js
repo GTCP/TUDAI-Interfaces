@@ -37,7 +37,9 @@ function Entregable(){
             document.getElementById("download").setAttribute("href", imgTag);
         }
     
-    }   
+    } 
+    
+    
 //-------------------------- SUBIR ARCHIVO----------------------------------------------------------------------------------------------------
     let archivoSubido = document.getElementById("archivoSubido").addEventListener("change", function (ev) { 
         if (ev.target.files) {
@@ -57,6 +59,9 @@ function Entregable(){
             };
         }
     });
+
+
+
 //-------------------------- FILTRO CONTRASTE----------------------------------------------------------------------------------------------------
     let botonFiltroContraste=document.getElementById("filtro-contraste").addEventListener("click",function(){       
         filtro_contraste(imageData);  
@@ -94,9 +99,7 @@ function Entregable(){
         con.putImageData(imageData,0,0);
         
         }
-    //let botonBorradoAlternativo=document.getElementById("limpiar").addEventListener("click",function(){       
-    //    c.width=c.width;
-    //});
+  
 //-------------------------- BORRADO TOTAL----------------------------------------------------------------------------------------------------
     let botonBorradoAutomatico=document.getElementById("borrado-automatico").addEventListener("click",function(){       
         borrado_automatico(imageData);
@@ -224,4 +227,6 @@ function Entregable(){
        }
        con.putImageData(imageData,0,0);
 }  
+
+
 }

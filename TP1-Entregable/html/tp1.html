@@ -13,83 +13,107 @@
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
 			</head>
 			<body>    
+				<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+					<div class="row">
+					</div>
+					   <div class="col-9">
+					   <div>
+					  <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+					   <div class="collapse navbar-collapse" id="navcol-1">
+							<ul class="nav navbar-nav ml-auto">
+							  <li class="nav-item" role="presentation"><a class="nav-link active" href="TP1.html"><i class="fa fa-sign-in"></i>TP1</a></li>		
+							</ul>
+					   </div>
+					   </div>
+					   </div>
+	   </nav>
 				<div class="container-fluids">
-					<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-						 <div class="row">
-						 </div>
-							<div class="col-9">
-							<div>
-						   <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-							<div class="collapse navbar-collapse" id="navcol-1">
-								 <ul class="nav navbar-nav ml-auto">
-								   <li class="nav-item" role="presentation"><a class="nav-link active" href="TP1.html"><i class="fa fa-sign-in"></i>TP1</a></li>		
-								 </ul>
-							</div>
-							</div>
-							</div>
-			</nav>  
-			</div>
 			<main class="page landing-page">
-                <section class="clean-block clean-info ">
-					<div class="container">
-						<div class="block-heading">
-							<h2 class="text-info">PAINT</h2>
-							<p>Cargar una Imagen desde disco</p>
-							<div class="row justify-content-center">
+                <section class="clean-block clean-info ">					
+						<div class="row ">
+							<div class="col-lg-4 feature-box order-1">
+									<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+										<div class="container-fluid d-flex flex-column p-0">
+											<a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+												<div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+												<div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+											</a>
+											<ul class="nav navbar-nav text-light" id="accordionSidebar">
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-negativo">Filtro Negativo[ANDA]</button>
+												</li>
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-gris">Filtro Gris[ANDA]</button>
+												</li>
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-contraste">Filtro Contraste[ANDA]</button>
+												</li>
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-sepia">Filtro Sepia[ANDA]</button></li>
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro">Filtro SATURACION</button>
 
-								<input id="archivoSubido" class="archivoSubido" name="uploadedfile" type="file" />
+
+
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro">Filtro SUAVIZADO</button>
+												</li>
+
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro">Filtro DETECCION DE BORDES</button>
+												</li>
+
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-sepia">Filtro Sepia[ANDA]</button></li>
+
+											</ul>
+											<div class="text-center d-none d-md-inline"><button type="button" class="btn btn-primary " id="filtro">Filtro BLUR</button>
+											</div>
+										</div>
+									</nav>
+							</div>
+							<div class="col-lg-4 feature-box order-2" >
+								<div class="bajar-canvas"><canvas class="canvas-ejercicio" id="canvas-ejercicio" width="500px" height="500px"></canvas></div>
+							</div>
+							<div class="col-lg-4 feature-box order-3">
 							</div>
 						</div>
-
-					
-
-						<div class="row align-items-center ">
-							<div class="col-md-4 feature-box"">
-									<button type="button" class="btn btn-primary " id="filtro-negativo">Filtro Negativo[ANDA]</button>
-									<button type="button" class="btn btn-primary " id="filtro-gris">Filtro Gris[ANDA]</button>
-									<button type="button" class="btn btn-primary " id="filtro-contraste">Filtro Contraste[ANDA]</button>
-									<button type="button" class="btn btn-primary " id="filtro-sepia">Filtro Sepia[ANDA]</button>
-							</div>	
+						<div class="row ">
 						</div>
 
-							<div class="row justify-content-center">
-								<div class="col-md-4 feature-box"">
-									<canvas class="canvas-ejercicio" id="canvas-ejercicio"></canvas>											
-								</div>
-							</div>
-					
+						
 					
 						<div class="row align-items-center  ">
 							<div class="col-md-4 feature-box"">
-								<button type="button" class="btn btn-primary " id="filtro">Filtro SATURACION</button>
-								<button type="button" class="btn btn-primary " id="filtro">Filtro SUAVIZADO</button>
-								<button type="button" class="btn btn-primary " id="filtro">Filtro DETECCION DE BORDES</button>
-								<button type="button" class="btn btn-primary " id="filtro">Filtro BLUR</button>
+								<input id="archivoSubido" class="archivoSubido" name="uploadedfile" type="file" />
+
 							</div>	
 						</div>
 						<div class="row align-items-center ">
 							<div class="col-md-4 feature-box"">
 								<div class="col-md-4 feature-box"">
-								<button type="button" class="btn btn-primary " id="filtro">Lapiz</button>
-								<button type="button" class="btn btn-primary " id="filtro">Goma</button>
+								<button type="button" class="btn btn-primary "  clas='lapiz' id='lapiz'>Lapiz</button>
+								<button type="button" class="btn btn-primary " clas='goma' id='goma'>Goma</button>
 								<button type="button" class="btn btn-primary " id="borrado-automatico">Borrado Automatico[ANDA]</button>
-								<!-- No es eficiente ya que si borro la imagen pero luego toco en un filtro se vuelve a colocar la imagen anterior en el canvas <button type="button" class="btn btn-primary " id="limpiar">BorradoAlternativo[ANDA]</button> -->
 								
 									<a id="download"  class="btn btn-primary" href="" download>Descargar[ANDA]</a>
+									<input type="color" id="color" oninput="defcolor(this.value);">
+    
+									<input type="range" id="grosor" oninput="defgrosor(this.value);" min="1" max="5" value="1">
 								</div>
 							</div>	
 						</div>
 					</div>
 				</section>
+
+				
 			</main>
 			</body>
+
+
+
+
 			<footer class="page-footer dark">	
 				<div class="footer-copyright">
 					<p> Interfaces © 2020</p>
 				</div>
 			</footer>	
 			</div>
-			<script src="../js/script.js" ></script>
+			<script src="..../js/script.js" ></script>
+			<script src="../js/RR.js" ></script>
+
 
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 					<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
