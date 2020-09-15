@@ -1,5 +1,15 @@
 "use strict";
 Entregable();
+function ocultar(){
+    alert("Se oculta");
+    document.getElementById("mostrarOcultar").style.display="none";
+   }
+   function mostrar(){
+       alert("Se muestra");
+       document.getElementById("mostrarOcultar").style.display="block";
+   }
+
+    document.getElementById("mostrarOcultar").style.display="none";
 function Entregable(){
     let c=document.querySelector(".canvas-ejercicio");
     let image = new Image();
@@ -79,6 +89,10 @@ function Entregable(){
 //-------------------------- SUBIR ARCHIVO----------------------------------------------------------------------------------------------------
     let archivoSubido = document.getElementById("archivoSubido").addEventListener("change", function (ev) { 
         if (ev.target.files) {
+            
+                alert("Se muestra");
+                document.getElementById("mostrarOcultar").style.display="block";
+            
             let file = ev.target.files[0];
             let proceso = new FileReader();
             proceso.readAsDataURL(file);
@@ -272,7 +286,8 @@ goma.addEventListener('click', function(e){
 //-------------------------- BORRADO TOTAL----------------------------------------------------------------------------------------------------
     let botonBorradoAutomatico=document.getElementById("borrado-automatico").addEventListener("click",function(){       
         con.clearRect(0, 0, c.width, c.height);
-
+        alert("Se oculta");
+    document.getElementById("mostrarOcultar").style.display="none";
         borrado_automatico();
     }); 
     function borrado_automatico(){
@@ -453,4 +468,12 @@ goma.addEventListener('click', function(e){
 }  
 }
 });
+
+
+
+
+
+
+
+
 }
