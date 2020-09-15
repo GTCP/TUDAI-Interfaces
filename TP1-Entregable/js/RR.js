@@ -1,36 +1,26 @@
-var color= "black";
-var grosor= 2;
-// let activarLapiz=false;
-// let activarGoma=false;
-
+let color= "black";
+let grosor= 2;
 let dibujando = false;
 let borrando = false;
-
-
-var canvas=document.getElementById('canvas-ejercicio');
-var ctx=canvas.getContext('2d');
+let canvas=document.getElementById('canvas-ejercicio');
+let ctx=canvas.getContext('2d');
 let botonlapiz=document.getElementById('lapiz');
 let goma=document.getElementById('goma');
-
 let inputColor=document.getElementById('color');
 canvas.width = 500;
 canvas.height = 500;
- botonlapiz.addEventListener('click', function(e){
-
-  
-            borrando=false;
+botonlapiz.addEventListener('click', function(e){
+        borrando=false;
         let rect= canvas.getBoundingClientRect();
         let x=0;
         let y=0;
         dibujando= false;
         let grosor= 2;
         let color="black";
-       
         function defcolor(g){
              let color=g;
              return color;
         }
-    
         canvas.addEventListener('mousedown', function(e){
             x=e.clientX - rect.left;
             y=e.clientY - rect.top;
@@ -62,20 +52,13 @@ canvas.height = 500;
             ctx.stroke();
             ctx.closePath();
         }
-    
 });
-
 goma.addEventListener('click', function(e){
-    
-   
-    var rect= canvas.getBoundingClientRect();
-    var x=0;
-    var y=0;
+    let rect= canvas.getBoundingClientRect();
+    let x=0;
+    let y=0;
     borrando= false;
-    var grosor= 10;
-  
-    
-
+    let grosor= 10;
     function defgrosor(g){
         grosor=g;
     }
@@ -84,7 +67,6 @@ goma.addEventListener('click', function(e){
         y=e.clientY - rect.top;
         borrando=true;
     });
-
     canvas.addEventListener('mousemove', function(e){
         if(borrando===true){
             borrar(x,y,e.clientX - rect.left,e.clientY-rect.top);
@@ -92,7 +74,6 @@ goma.addEventListener('click', function(e){
             y=e.clientY - rect.top;
         }
     });
-
     canvas.addEventListener('mouseup', function(e){
         if(borrando===true){
             borrar(x,y,e.clientX - rect.left,e.clientY-rect.top);
@@ -101,7 +82,6 @@ goma.addEventListener('click', function(e){
             borrando=false;
         }
     });
-
     function borrar(x1, y1, x2,y2){
         ctx.strokeStyle="white";
         ctx.lineWidth=grosor;
@@ -111,7 +91,4 @@ goma.addEventListener('click', function(e){
         ctx.stroke();
         ctx.closePath();
     }
-
 });
-
-
