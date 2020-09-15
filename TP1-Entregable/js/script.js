@@ -130,8 +130,10 @@ var canvas=document.getElementById('canvas-ejercicio');
 var ctx=canvas.getContext('2d');
 let botonlapiz=document.getElementById('lapiz');
 let goma=document.getElementById('goma');
-
-
+c.width = 500;
+    c.height = 500;
+  canvas.width = 500;
+    canvas.height = 500;
  botonlapiz.addEventListener('click', function(e){
         borrando=false;
         let rect= canvas.getBoundingClientRect();
@@ -141,7 +143,7 @@ let goma=document.getElementById('goma');
         let color= "black";
         let grosor= 2;
         let inputColor=document.getElementById('color');
-     
+
     
         canvas.addEventListener('mousedown', function(e){
             x=e.clientX - rect.left;

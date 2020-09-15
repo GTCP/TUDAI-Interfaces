@@ -12,17 +12,24 @@ var ctx=canvas.getContext('2d');
 let botonlapiz=document.getElementById('lapiz');
 let goma=document.getElementById('goma');
 
-
+let inputColor=document.getElementById('color');
+canvas.width = 500;
+canvas.height = 500;
  botonlapiz.addEventListener('click', function(e){
-        borrando=false;
+
+  
+            borrando=false;
         let rect= canvas.getBoundingClientRect();
         let x=0;
         let y=0;
         dibujando= false;
-        let color= "black";
         let grosor= 2;
-        let inputColor=document.getElementById('color');
-     
+        let color="black";
+       
+        function defcolor(g){
+             let color=g;
+             return color;
+        }
     
         canvas.addEventListener('mousedown', function(e){
             x=e.clientX - rect.left;
@@ -66,8 +73,7 @@ goma.addEventListener('click', function(e){
     var y=0;
     borrando= false;
     var grosor= 10;
-
-
+  
     
 
     function defgrosor(g){
