@@ -12,109 +12,93 @@
                 <link rel="stylesheet" href="/fonts/simple-line-icons.min.css">
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
 			</head>
-			<body>    
-				<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-					<div class="row">
-					</div>
-					   <div class="col-9">
-					   <div>
-					  <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-					   <div class="collapse navbar-collapse" id="navcol-1">
-							<ul class="nav navbar-nav ml-auto">
-							  <li class="nav-item" role="presentation"><a class="nav-link active" href="TP1.html"><i class="fa fa-sign-in"></i>TP1</a></li>		
-							</ul>
-					   </div>
-					   </div>
-					   </div>
-	   </nav>
-				<div class="container-fluids">
-			<main class="page landing-page">
-                <section class="clean-block clean-info ">					
-						<div class="row ">
-							<div class="col-lg-4 feature-box order-1">
-									<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
-										<div class="container-fluid d-flex flex-column p-0">
-											<a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-												<div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-												<div class="sidebar-brand-text mx-3"><span>Brand</span></div>
-											</a>
-											<ul class="nav navbar-nav text-light" id="accordionSidebar">
-												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-negativo">Filtro Negativo[ANDA]</button>
-												</li>
-												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-gris">Filtro Gris[ANDA]</button>
-												</li>
-												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-contraste">Filtro Contraste[ANDA]</button>
-												</li>
-												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-sepia">Filtro Sepia[ANDA]</button></li>
-												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro">Filtro SATURACION</button>
-
-
-
-												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro">Filtro SUAVIZADO</button>
-												</li>
-
-												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro">Filtro DETECCION DE BORDES</button>
-												</li>
-
-												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-sepia">Filtro Sepia[ANDA]</button></li>
-
-											</ul>
-											<div class="text-center d-none d-md-inline"><button type="button" class="btn btn-primary " id="filtro">Filtro BLUR</button>
-											</div>
-										</div>
-									</nav>
-							</div>
-							<div class="col-lg-4 feature-box order-2" >
-								<div class="bajar-canvas"><canvas class="canvas-ejercicio" id="canvas-ejercicio" width="500px" height="500px"></canvas></div>
-							</div>
-							<div class="col-lg-4 feature-box order-3">
-							</div>
-						</div>
-						<div class="row ">
-						</div>
-
-						
-					
-						<div class="row align-items-center  ">
-							<div class="col-md-4 feature-box"">
-								<input id="archivoSubido" class="archivoSubido" name="uploadedfile" type="file" />
-
-							</div>	
-						</div>
-						<div class="row align-items-center ">
-							<div class="col-md-4 feature-box"">
-								<div class="col-md-4 feature-box"">
-								<button type="button" class="btn btn-primary "  clas='lapiz' id='lapiz'>Lapiz</button>
-								<button type="button" class="btn btn-primary " clas='goma' id='goma'>Goma</button>
-								<button type="button" class="btn btn-primary " id="borrado-automatico">Borrado Automatico[ANDA]</button>
-								
-									<a id="download"  class="btn btn-primary" href="" download>Descargar[ANDA]</a>
-									<input type="color" id="color" oninput="defcolor(this.value);">
-    
-									<input type="range" id="grosor" oninput="defgrosor(this.value);" min="1" max="5" value="1">
+			<body>
+				<main>  
+				<section class="clean-block about-us">
+					<div class="container-fluids">
+							<nav class="navbar navbar-light navbar-expand-lg fixed-top clean-navbar bg-gradient-primary">
+								<div class="row ">
 								</div>
+								  <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+								   <div class="collapse navbar-collapse" id="navcol-1">
+									<ul>	
+										<button><a id="download"  class="" href="" download>Descargar</a></button>										
+												<button type="button" class="" id="borrado-automatico">Limpiar Canvas</button>
+												<button type="button" class="btn btn-primary " clas='goma' id='goma'>Goma</button>
+
+												<button type="button" class="btn btn-primary "  clas='lapiz' id='lapiz'>Lapiz</button>
+												<input type="color" id="color" oninput="defcolor(this.value);">
+				
+												<input type="range" id="grosor" oninput="defgrosor(this.value);" min="1" max="5" value="1">
+										 
+										  <input id="archivoSubido" class="archivoSubido btn btn-primary" name="uploadedfile" type="file" />
+
+										  
+								   </ul>
+
+										
+								   </div>	
+				  			</nav>						
+						<div class="row ">
+							<div class="col-sm-2 col-lg-4 order-1">
+								<div class="col-sm-2 col-lg-4 order-1">
+
+									<nav class="bg-gradient-primary ">
+										<button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+										<div class="" id="navcol-1">
+											
+											<ul class="text-light">
+												<p class="btn-primary">FILTROS </p>
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-contraste">Contraste</button></li>
+
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-negativo">Negativo</button>	</li>
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-sepia">Sepia</button></li>
+
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-gris">Gris</button>	</li>
+												
+											</ul>
+										</div>	
+
+									</nav>
+								</div>	
+
 							</div>	
+							<div class="col-sm-2 col-lg-2 order-2">
+							<canvas class="canvas-ejercicio card-img-top" id="canvas-ejercicio"></canvas>
+							</div>
+							<div class="col-sm-2 col-lg-2 order-3">
+								<div class="col-sm-2 col-lg-4 order-1">
+									<nav class="bg-gradient-primary ">
+										<button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+										<div class="" id="navcol-1">
+											<ul class="text-light">
+											<p class="btn-primary">FILTROS </p>
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-saturacion">Saturacion</button></li>
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-suavizado">Suavizado</button></li>
+											</ul>
+										</div>	
+
+									</nav>
+								</div>
+							</div>
+						</div>
+
+						</div>
+					
+				</section>
+				<footer class="page-footer bg-gradient-primary">
+					<div class="container">
+						<div class="row">
 						</div>
 					</div>
-				</section>
-
-				
+					<div class="footer-copyright">
+					</div>
+				</footer>
+			</div>
 			</main>
 			</body>
-
-
-
-
-			<footer class="page-footer dark">	
-				<div class="footer-copyright">
-					<p> Interfaces © 2020</p>
-				</div>
-			</footer>	
-			</div>
-			<script src="..../js/script.js" ></script>
+			<script src="../js/script.js" ></script>
 			<script src="../js/RR.js" ></script>
-
-
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 					<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 					<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
