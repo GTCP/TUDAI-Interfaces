@@ -21,69 +21,45 @@
 								</div>
 								   <div class="" id="navcol-1">
 									<ul>	
-															
-											
-										 
 										  <input id="archivoSubido" class="archivoSubido btn btn-primary" name="uploadedfile" type="file" />
-										  <button><a id="download"  class="" href="" download>Descargar</a></button>
-
-										  
-								   </ul>
-
-										
+										  <button><a id="download"  class="" href="" download>Descargar</a></button>	  
+								   </ul>	
 								   </div>	
 				  			</nav>						
 						<div class="row ">
-							
 							<div class="col-sm-2 col-lg-4">
 								<div class="col-sm-2 col-lg-4 ">
-
 									<nav class="bg-gradient-primary ">
-										
 										<div class="" id="navcol-1">
-											
 											<ul id="mostrarOcultar" class="text-light">
 												<p class="btn-primary" >FILTROS </p>
 												<li  class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-contraste">Contraste</button></li>
-
 												<li  class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-negativo">Negativo</button>	</li>
 												<li  class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-sepia">Sepia</button></li>
-
 												<li  class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-gris">Gris</button>	</li>
-												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-saturacion">Saturacion</button></li>
-												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-suavizado">Suavizado</button></li>
+												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-blur">Blur</button></li>
 											</ul>
 										</div>	
-
 									</nav>
-								</div>	
-
-								
+								</div>		
 						</div>
 							<div class="col-sm-2 col-lg-2 order-1">
 									<canvas class="canvas-ejercicio card-img-top" id="canvas-ejercicio"></canvas>
 							</div>
-							
 							<div class="col-sm-2 col-lg-2 order-3">
 								<div class="col-sm-2 col-lg-4 order-3">
 									<nav class="bg-gradient-primary ">
 										<button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
 										<div class="" id="navcol-1">
 											<ul class="text-light">
-											<p class=" btn-primary"></p>
-
+											<p class=" btn-primary">Filtros</p>
 										<button type="button" class="" id="borrado-automatico">Limpiar Canvas</button>
 										<button type="button" class=" " clas='goma' id='goma'>Goma</button>
-
 										<button type="button" class=" "  clas='lapiz' id='lapiz'>Lapiz</button>
 										<input type="color" id="color" oninput="defcolor(this.value);">
-		
 										<input type="range" id="grosor" oninput="defgrosor(this.value);" min="1" max="5" value="1">
-								 
-								  
 											</ul>
 										</div>	
-
 									</nav>
 								</div>
 							</div>
