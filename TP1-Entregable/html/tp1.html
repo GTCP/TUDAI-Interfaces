@@ -13,65 +13,86 @@
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
 			</head>
 			<body>
-				<main>  
-				<section class="clean-block about-us">
-					<div class="container-fluids">
-											
-						<div class="row ">
-							<div class="col-sm-2 col-lg-4 bg-gradient-primary">
-								<div class="col-sm-2 col-lg-4 ">
-									<nav class=" ">
-										<div class="" id="navcol-1">
-											<ul id="mostrarOcultar" class="text-light">
-												<p class="btn-primary" ><img src="../css/images/filtro.ico" width="25" height="25" alt="x"/>FILTROS </p>
-												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-saturacion"><img src="../css/images/saturacion.ico" width="25" height="25" alt="x"/>Saturacion</button></li>
-												<li  class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-contraste"><img src="../css/images/contraste.ico" width="25" height="25" alt="x"/>Contraste</button></li>
-												<li  class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-negativo"><img src="../css/images/negativo.ico" width="25" height="25" alt="x"/>Negativo</button>	</li>
-												<li  class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-sepia"><img src="../css/images/sepia.ico" width="25" height="25" alt="x"/>Sepia</button></li>
-												<li  class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-gris"><img src="../css/images/bw.png" width="25" height="25" alt="x"/>Gris</button>	</li>
-												<li class="nav-item nav-link active"><button type="button" class="btn btn-primary "  id="filtro-blur"><img src="../css/images/blur.ico" color:white width="25" height="25" alt="x"/>Blur</button></li>
-											</ul>
-										</div>	
-									</nav>
-								</div>		
-						</div>
-							<div class="col-sm-2 col-lg-2 order-1 ">
-									<canvas  class="canvas-ejercicio card-img-top navbar-light" id="canvas-ejercicio"></canvas>
+				<head>
+					<!-- Required meta tags -->
+					<meta charset="utf-8">
+					<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+					<!-- Bootstrap CSS -->
+					<link rel="stylesheet" href="css/bootstrap.min.css">
+					<link rel="stylesheet" href="../css/style.css">
+					<link rel="icon" type="image/jpg" media="screen" href="images/icono.jpg">
+					<title>Paint GTCP</title>
+				  </head>
+				  <body>
+					  <div class="container-fluid config-top">
+						<!-- PRIMER FILA -->
+					  <header>
+						  <div class="row">
+							<div class="col-12 col-sm-12 col-md-12 col-lg-12 confi-top">
+							  <img src="../css/images/minimalista.png" class="img-fluid portada" alt="Responsive image">
 							</div>
-							<div class="col-sm-2 col-lg-2 order-3 bg-gradient-primary">
-								<div class="col-sm-2 col-lg-4 order-3">
-									<nav class="">
-										<button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-										<button  type="button" class="btn btn-primary btn-bota" id="borrado-automatico"><img src="../css/images/borrar.ico" width="25" height="25" alt="x"/>Limpiar Canvas</button>
-										<button type="button"  class="lapiz  btn btn-primary" id="lapiz" ><img src="../css/images/pencil.ico" width="25" height="25" alt="x"/>Lapiz</button>
-										<button type="button" class="btn btn-primary" clas="goma" id="goma"><img src="../css/images/goma.ico" width="50" height="50" alt="x"/>Goma</button>	
-										</div>	
-									</nav>
+						  </div>
+						</header>
+						<!-- segunda FILA -->
+							<nav>
+								<div class="row bg-gradient-primary btn-primary ">   
+									<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 botonnavegador bg-gradient-primary"><button type="button" class="btn-primary bg-gradient-primary" id="archivoSubido"><input  id="archivoSubido" class="btn btn-primary bg-gradient-primary archivoSubido bg-gradient-primary " name="uploadedfile" type="file" /><img src="../css/images/subir.ico" width="25" height="25" alt="x"/></button></div>
+									<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 botonnavegador bg-gradient-primary"><button  type="button" class="btn btn-primary   bg-gradient-primary  btn-bota " id="borrado-automatico"><img src="../css/images/borrar.ico" width="25" height="25" alt="x"/>Limpiar Canvas</button></div>
+									<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 botonnavegador bg-gradient-primary"><button type="button" class="btn-primary bg-gradient-primary btn" ><a class="" id="download"  class="" href="" download><img class="" src="../css/images/descargar.ico" width="25" height="25" alt="x"/>Descargar</a></button></div>
+									</div>
 								</div>
-							</div>
-						</div>
+							  </nav>
+					  	</div>
+							<!-- Contenido principal -->
+							<article>
+							  <div class="row">
+								<div class="col-3 col-sm-8 col-md-8 col-lg-3 order-4"></div>
+								<nav class=" ">
+								  <div class="" id="navcol-1">
+									<ul id="mostrarOcultar" class="alinear">
+									  <p class="btn" ><img src="../css/images/filtro.ico" width="25" height="25" alt="x"/>FILTROS </p>
+									  <li class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-saturacion"><img src="../css/images/saturacion.ico" width="25" height="25" alt="x"/>Saturacion</button></li>
+									  <li  class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-contraste"><img src="../css/images/contraste.ico" width="25" height="25" alt="x"/>Contraste</button></li>
+									  <li  class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-negativo"><img src="../css/images/negativo.ico" width="25" height="25" alt="x"/>Negativo</button>	</li>
+									  <li  class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-sepia"><img src="../css/images/sepia.ico" width="25" height="25" alt="x"/>Sepia</button></li>
+									  <li  class="nav-item nav-link active"><button type="button" class="btn btn-primary " id="filtro-gris"><img src="../css/images/bw.png" width="25" height="25" alt="x"/>Gris</button>	</li>
+									  <li class="nav-item nav-link active"><button type="button" class="btn btn-primary "  id="filtro-blur"><img src="../css/images/blur.ico" color:white width="25" height="25" alt="x"/>Blur</button></li>
+									</ul>
+								  </div>	
+								</nav>
+								<div class="col-1 col-sm-1 col-md-1 col-lg-1 order-6"></div>
 
-						</div>
-					
-				</section>
-				<section>
-					<div class="col-sm-2 col-lg-2 order-1 ">
-						<button class="bg-gradient-primary" id="archivoSubido"><input id="archivoSubido" class="btn archivoSubido bg-gradient-primary " name="uploadedfile" type="file" /><img src="../css/images/subir.ico" width="25" height="25" alt="x"/></button>
+								<div class="col-8 col-sm-6 col-md-4 col-lg-4 order-1">
+									<canvas  class="canvas-ejercicio card-img-top navbar-light" id="canvas-ejercicio"></canvas>
+								</div>
+								<div class="col-2 col-sm-3 col-md-4 col-lg-4 order-2">
+									<nav class=">
+										<div class="" id="navcol-1">
+										<ul id="" class="text-light">
+											<p class="btn" ><img src="../css/images/ajustes.png" width="25" height="25" alt="x"/>Herramientas </p>
+											<li class="tnav-item nav-link active"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button></li>
+											<li class="nav-item nav-link active"><button type="button"  class="lapiz  btn btn-primary" id="lapiz" ><img src="../css/images/pencil.ico" width="25" height="25" alt="x"/>Lapiz</button></li><li><button type="button" class="btn btn-primary" clas="goma" id="goma"><img src="../css/images/goma.ico" width="50" height="50" alt="x"/>Goma</button>	
+										</ul>
+										</div>	
+									</nav>
+								</div>	
+							  </div>
+							</article>
+							<!-- Footer -->
+							<footer>
+							  <div class="row bg-gradient-primary ">
+								  <div class="col-12  ">
+									<p class="alinear">Paint Unicen @ 2020</p>
+							  </div>
+							</footer>
 					</div>
-				
-				<div class="col-sm-2 col-lg-2 order-1 ">
-					<button class="btn-primary bg-gradient-primary" ><a class="bg-gradient-primary" id="download"  class="bg-gradient-primary" href="" download><img src="../css/images/descargar.ico" width="25" height="25" alt="x"/>Descargar</a></button>	  
-				</div>
-				</section>
-					 
 			</main>
-			</body>
-			<script src="../js/script.js" ></script>
-			<script src="../js/RR.js" ></script>
-			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+					<script src="../js/script.js" ></script>
+					<script src="../js/RR.js" ></script>
+					<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 					<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 					<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-							</body>
-			</html>
+	</body>
+</html>
 
 		

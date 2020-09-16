@@ -1,5 +1,5 @@
 let color= "black";
-let grosor= 2;
+let grosor= 4;
 let dibujando = false;
 let borrando = false;
 let canvas=document.getElementById("canvas-ejercicio");
@@ -58,7 +58,7 @@ goma.addEventListener("click",function(e){
     let x=0;
     let y=0;
     borrando= false;
-    let grosor= 10;
+    let grosor= 15;
   
     function defgrosor(g){
         grosor=g;

@@ -82,7 +82,10 @@ function Entregable(){
 //-------------------------- SUBIR ARCHIVO----------------------------------------------------------------------------------------------------
 let archivoSubido=document.getElementById("archivoSubido").addEventListener("change",function(ev) { 
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+    
 
+        
     console.log("ENTRO");
             imageData=ev.value;
             image.width=c.width;
@@ -91,7 +94,6 @@ let archivoSubido=document.getElementById("archivoSubido").addEventListener("cha
             imageData=con.getImageData(0,0,c.width,c.height);
             con.putImageData(imageData,0,0);;
 
-        
         
         if (ev.target.files) {
             document.getElementById("mostrarOcultar").style.display="block";
@@ -112,6 +114,10 @@ let archivoSubido=document.getElementById("archivoSubido").addEventListener("cha
                 }
                  };
                 let color= "black";
+                ev.target.files="";
+                archivoSubido.value="";
+
+                
 
 let grosor=2;
 let dibujando = false;
@@ -123,7 +129,7 @@ let goma=document.getElementById("goma");
 c.width=500;
 c.height=500;
 canvas.width=500;
-canvas.height=500;
+canvas.height=500;no
 botonlapiz.addEventListener("click",function(e){
         borrando=false;
         let rect= canvas.getBoundingClientRect();
@@ -131,7 +137,7 @@ botonlapiz.addEventListener("click",function(e){
         let y=0;
         dibujando=false;
         let color="black";
-        let grosor=2;
+        let grosor=4;
         let inputColor=document.getElementById("color");
         canvas.addEventListener("mousedown",function(e){
             x=e.clientX-rect.left;
@@ -170,7 +176,7 @@ goma.addEventListener("click",function(e){
     let x=0;
     let y=0;
     borrando=false;
-    let grosor=10;
+    let grosor=15;
     function defgrosor(g){
         grosor=g;
     }
