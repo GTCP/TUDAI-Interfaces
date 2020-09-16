@@ -1,10 +1,10 @@
 "use strict";
 Entregable();
+
 function ocultar(){
     document.getElementById("mostrarOcultar").style.display="none";
    }
    function mostrar(){
-       alert("Se muestra");
        document.getElementById("mostrarOcultar").style.display="block";
    }
     document.getElementById("mostrarOcultar").style.display="none";
@@ -16,6 +16,8 @@ function Entregable(){
     let imageData;
     let imagen= document.getElementById("download");
     img.crossOrigin="Anonymous";
+    con.clearRect(0,0,c.width,c.height);
+
     let botonBorradoAutomatico=document.getElementById("borrado-automatico").addEventListener("click",function(){       
         con.clearRect(0,0,c.width,c.height);
     });
@@ -41,7 +43,6 @@ function Entregable(){
                let r=rojo(imageData,x,y);
                let g=verde(imageData,x,y);
                let b=azul(imageData,x,y);
-               let f=0.2126*r+0.7152*g+0.0722*b;
                set_pixeles(imageData,x,y,r,g,b);
            }
        }
@@ -79,7 +80,19 @@ function Entregable(){
         }
     } 
 //-------------------------- SUBIR ARCHIVO----------------------------------------------------------------------------------------------------
-    let archivoSubido=document.getElementById("archivoSubido").addEventListener("change",function(ev) { 
+let archivoSubido=document.getElementById("archivoSubido").addEventListener("change",function(ev) { 
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    console.log("ENTRO");
+            imageData=ev.value;
+            image.width=c.width;
+            image.height=c.height;
+            con.drawImage(image,0,0,c.width,c.height); 
+            imageData=con.getImageData(0,0,c.width,c.height);
+            con.putImageData(imageData,0,0);;
+
+        
+        
         if (ev.target.files) {
             document.getElementById("mostrarOcultar").style.display="block";
             let file=ev.target.files[0];
@@ -99,6 +112,7 @@ function Entregable(){
                 }
                  };
                 let color= "black";
+
 let grosor=2;
 let dibujando = false;
 let borrando = false;
@@ -208,7 +222,6 @@ goma.addEventListener("click",function(e){
                 let r=rojo(imageData,x,y);
                 let g=verde(imageData,x,y);
                 let b=azul(imageData,x,y);
-                let f=0.2126*r+0.7152*g+0.0722*b;
                 set_pixeles(imageData,x,y,r,g,b);
             }
         }
@@ -370,43 +383,43 @@ goma.addEventListener("click",function(e){
        }
        con.putImageData(imageData,0,0);
 }  
-}
+}//CIERRA IF 
 });
 //-------------------------- FILTRO BLUR----------------------------------------------------------------------------------------------------
 let botonBlur=document.getElementById("filtro-blur").addEventListener("click", filtro_blur);
-function filtro_blur() {
+function filtro_blur(){
     image.width=canvas.width;
     image.height=canvas.height;
     con.drawImage(image, 0, 0, canvas.width, canvas.height); 
     imageData=con.getImageData(0,0,canvas.width,canvas.height);
     con.putImageData(imageData,0,0);;
     let mat=[[1,2,1],[2,4,2],[1,2,1]];
-    for (let contador=0;contador<5;contador++) {
+    for (let contador=0;contador<10;contador++) {
         for (let w=0;w<imageData.width;w++) {
             for (let h=0;h<imageData.height;h++) {
                 let index=[ , , , , , , , , ];
-                index[0]=((w - 1 + imageData.width)% imageData.width + imageData.width *((h - 1 + imageData.height)% imageData.height))*4; 
-                index[1]=((w - 0 + imageData.width)% imageData.width + imageData.width *((h - 1 + imageData.height)% imageData.height))*4; 
-                index[2]=((w + 1 + imageData.width)% imageData.width + imageData.width *((h - 1 + imageData.height)% imageData.height))*4; 
-                index[3]=((w - 1 + imageData.width)% imageData.width + imageData.width *((h + 0 + imageData.height)% imageData.height))*4; 
-                index[4]=((w - 0 + imageData.width)% imageData.width + imageData.width *((h + 0 + imageData.height)% imageData.height))*4; 
-                index[5]=((w + 1 + imageData.width)% imageData.width + imageData.width *((h + 0 + imageData.height)% imageData.height))*4; 
-                index[6]=((w - 1 + imageData.width)% imageData.width + imageData.width *((h + 1 + imageData.height)% imageData.height))*4; 
-                index[7]=((w - 0 + imageData.width)% imageData.width + imageData.width *((h + 1 + imageData.height)% imageData.height))*4; 
-                index[8]=((w + 1 + imageData.width)% imageData.width + imageData.width *((h + 1 + imageData.height)% imageData.height))*4; 
+                index[0]=((w-1+imageData.width)%imageData.width+imageData.width*((h-1+imageData.height)%imageData.height))*4; 
+                index[1]=((w-0+imageData.width)%imageData.width+imageData.width*((h-1+imageData.height)%imageData.height))*4; 
+                index[2]=((w+1+imageData.width)%imageData.width+imageData.width*((h-1+imageData.height)%imageData.height))*4; 
+                index[3]=((w-1+imageData.width)%imageData.width+imageData.width*((h+0+imageData.height)%imageData.height))*4; 
+                index[4]=((w-0+imageData.width)%imageData.width+imageData.width*((h+0+imageData.height)%imageData.height))*4; 
+                index[5]=((w+1+imageData.width)%imageData.width+imageData.width*((h+0+imageData.height)%imageData.height))*4; 
+                index[6]=((w-1+imageData.width)%imageData.width+imageData.width*((h+1+imageData.height)%imageData.height))*4; 
+                index[7]=((w-0+imageData.width)%imageData.width+imageData.width*((h+1+imageData.height)%imageData.height))*4; 
+                index[8]=((w+1+imageData.width)%imageData.width+imageData.width*((h+1+imageData.height)%imageData.height))*4; 
                 let r=rojo(imageData,index);
                 let g=verde(imageData,index);
                 let b=azul(imageData,index);
                 let f=imageData.data[index[7]+3];
                 set_pixeles(imageData,r,g,b,f);
                 function rojo(imageData,index){
-                    return ((imageData.data[index[0]]* mat[0][0] + imageData.data[index[1]]* mat[0][1] + imageData.data[index[2]]* mat[0][2] + imageData.data[index[3]]* mat[1][0] + imageData.data[index[4]]* mat[1][1]+imageData.data[index[5]]* mat[1][2] + imageData.data[index[6]]* mat[2][0] + imageData.data[index[7]]* mat[2][1] + imageData.data[index[8]]* mat[2][2])/16); 
+                    return ((imageData.data[index[0]]*mat[0][0]+imageData.data[index[1]]*mat[0][1]+imageData.data[index[2]]*mat[0][2]+imageData.data[index[3]]*mat[1][0]+imageData.data[index[4]]*mat[1][1]+imageData.data[index[5]]*mat[1][2]+imageData.data[index[6]]* mat[2][0]+imageData.data[index[7]]*mat[2][1]+imageData.data[index[8]]*mat[2][2])/16); 
                 }
                 function verde(imageData,index){
-                    return ((imageData.data[index[0]+1]* mat[0][0] + imageData.data[index[1]+1]* mat[0][1] + imageData.data[index[2]+1]* mat[0][2] + imageData.data[index[3]+1]* mat[1][0] + imageData.data[index[4]+1]* mat[1][1] + imageData.data[index[5]+1]* mat[1][2] + imageData.data[index[6]+1]* mat[2][0] + imageData.data[index[7]+1]* mat[2][1] + imageData.data[index[8]+1]* mat[2][2])/16); 
+                    return ((imageData.data[index[0]+1]*mat[0][0]+imageData.data[index[1]+1]*mat[0][1]+imageData.data[index[2]+1]*mat[0][2]+imageData.data[index[3]+1]*mat[1][0]+imageData.data[index[4]+1]*mat[1][1]+imageData.data[index[5]+1]*mat[1][2]+imageData.data[index[6]+1]*mat[2][0]+imageData.data[index[7]+1]*mat[2][1]+imageData.data[index[8]+1]*mat[2][2])/16); 
                 }
                 function azul(imageData,index){
-                    return ((imageData.data[index[0]+2]* mat[0][0] + imageData.data[index[1]+2]* mat[0][1] + imageData.data[index[2]+2]* mat[0][2] + imageData.data[index[3]+2]* mat[1][0] + imageData.data[index[4]+2]* mat[1][1] + imageData.data[index[5]+2]* mat[1][2] + imageData.data[index[6]+2]* mat[2][0] + imageData.data[index[7]+2]* mat[2][1] + imageData.data[index[8]+2]* mat[2][2])/16); 
+                    return ((imageData.data[index[0]+2]*mat[0][0]+imageData.data[index[1]+2]*mat[0][1]+imageData.data[index[2]+2]*mat[0][2]+imageData.data[index[3]+2]*mat[1][0]+imageData.data[index[4]+2]*mat[1][1]+imageData.data[index[5]+2]*mat[1][2]+imageData.data[index[6]+2]*mat[2][0]+imageData.data[index[7]+2]*mat[2][1]+imageData.data[index[8]+2]*mat[2][2])/16); 
                 } 
                 function set_pixeles(imageData,r,g,b,f){
                     imageData.data[index[4]+0]=r;
@@ -418,5 +431,31 @@ function filtro_blur() {
         }
     }
     con.putImageData(imageData, 0, 0);
+}
+//-------------------------- FILTRO SATURACION----------------------------------------------------------------------------------------------------
+let botonSaturacion=document.getElementById("filtro-saturacion").addEventListener("click", filtro_saturacion);
+function filtro_saturacion(){
+    image.width=canvas.width;
+    image.height=canvas.height;
+    con.drawImage(image,0,0,c.width,c.height); 
+    imageData=con.getImageData(0,0,c.width,c.height);
+    con.putImageData(imageData,0,0);
+    let intensidad=10;//regula 
+    let ajuste=(intensidad*(intensidad+(intensidad/2)))*-intensidad;//              (100%*(100%+(100%/2))*(-100%)    1000%*(-100%)
+    for(let h=0;h<c.height;h++){
+        for(let w=0;w<c.width;w++){
+            let index=rojo(imageData,h,w);
+            set_pixeles(imageData,index,intensidad,ajuste);
+        }
+    }	  
+    function rojo(imageData,x,y){
+        return  (x+y*imageData.width)*4;
+    }
+    function set_pixeles(imageData,index,intensidad,ajuste){
+        imageData.data[index]=imageData.data[index]*intensidad+ajuste;
+        imageData.data[index+1]=imageData.data[index+1]*intensidad+ajuste;
+        imageData.data[index+2]=imageData.data[index+2]*intensidad+ajuste;
+    }
+    con.putImageData(imageData,0,0);
 }
 }
