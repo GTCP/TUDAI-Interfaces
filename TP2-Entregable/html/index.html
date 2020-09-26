@@ -14,32 +14,34 @@
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css" />
             </head>
-            <body>            
-                <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+            <body >            
+                <nav class="navbar navbar-light navbar-expand-lg fixed-top clean-navbar color-navegador ">
    
                     <div class="container">        <img class="" src="../css/images/game.png"  alt="x"/>
                         <a class="navbar-brand logo" href="#">4 en Raya</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                         <div class="collapse navbar-collapse"
                             id="navcol-1">
                             <ul class="nav navbar-nav ml-auto">
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">REINICIAR JUEGO</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">NUEVOS JUGADORES</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">STATUS</a></li>
+                                <li class="nav-item" role="presentation"><h5 class="texto-navegador" href="participante.html">Renombrar jugadores</h5></li>
+                                <li class="nav-item" role="presentation"><h5 class="texto-navegador" href="index.html">Reiniciar juego</h5></li>
+                                <li class="nav-item" role="presentation"><h5 class="texto-navegador" href="index.html">Status</h5></li>
+
+                                    
                             </ul>
                         </div>
                     </div>
                 </nav>
-                <main class="page contact-us-page dark contenido">
+                <main class="page contact-us-page dark contenido"  style="background-color:rgba(51,0,0,255);">
                     <section class="clean-block clean-form ">
                         <div class="row justify-content-center">
                             <div class="col-md-9">
-                                <canvas class="canvas" id="canvas" width="1450" height="750" ></canvas>
+                                <canvas id="canvas" width="1330" height="675" ></canvas>
                             </div>
                         </div>
-                    </section>
-                </main>
-                <footer class="page-footer dark">
-                    <div class="container">
+                    </section> 
+                </main style="background-color:rgba(51,0,0,255);">
+                <footer style="background-color:rgba(0,0,0,255);" class="page-footer dark fondo-footer">
+                    <div class="container fondo-footer">
                         <div class="row">
                             <div class="col-sm-6">
                                 <h5>Soporte</h5>
@@ -57,9 +59,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="footer-copyright">
+                    <div style="background-color:rgba(51,0,0,255);" class="fondo-footer footer-copyright" id="footer-copyright">
                         <p>Interfaces U.N.I.C.E.N @2020</p>
                     </div>
                 </footer>
-            </body> 
+              
+
+                        <script src="../js/script.js"></script>
+                        <script src="../js/partida.js"></script>
+                        <script src="../js/moneda.js"></script>
+                        <script src="../js/pizarra.js"></script>
+
+            </body>       
  </html>

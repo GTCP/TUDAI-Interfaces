@@ -1,0 +1,4 @@
+class Pizarra{
+    constructor(){
+    }
+}
