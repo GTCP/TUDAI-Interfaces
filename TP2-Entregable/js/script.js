@@ -1,12 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
+   // let  preguntas=false;
+   // let primerParticipante;
+   // let segundoParticipante;
+  /*  if(!preguntas){
+        let form=document.getElementById("input-formulario").addEventListener("click",function(e){
+        preguntas=true;
+        primerParticipante=document.getElementById("participante-1").value;
+        segundoParticipante=document.getElementById("participante-2").value;
+        console.log("PARTICIPANTE 1:"+primerParticipante);
+        console.log("PARTICIPANTE 2:"+segundoParticipante);
+        location.href="../html/index.html";
+        });
+    }
+    */    
     let c=document.querySelector("#canvas");
-    let con=c.getContext("2d");
-    let partida = new Partida(c);
-    let borradoAutomatico=document.getElementById("reiniciar-partida").addEventListener("click",function(){
-        con.clearRect(0,0,c.width,c.height);
-        con.fillStyle="rgba(51,0,0,255)";
-        con.fillRect(0,0,c.width, c.height);
-        partida.nueva_partida();
-    });
-    partida.nueva_partida();
+   let con=c.getContext("2d");
+   let partida = new Partida(c);
+   partida.nueva_partida();
+     
+            let borradoAutomatico=document.getElementById("reiniciar-partida").addEventListener("click",function(){
+                partida.nueva_partida();
+                console.log("SE REINICIO");
+            });
+    //}
 });
+

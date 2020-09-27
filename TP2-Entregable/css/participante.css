@@ -1047,7 +1047,6 @@ element.style {
 .fondo-contacto{
   background-repeat: no-repeat;
   background-size: cover;
-  background-image:url('../css/images/portadacontacto.jpg');
 }
 
 button:focus {

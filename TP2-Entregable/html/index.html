@@ -2,11 +2,16 @@
             <html lang="en">
             <head>
                 <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+                <meta name="viewport" content="width=device-width, initial-scale=1">
                 <meta http-equiv="X-UA-Compatible" content="ie=edge">
                 <title>4enRaya</title>
                 <link rel="stylesheet" href="../css/bootstrap.min.css">
                 <link rel="stylesheet" href="../css/style.css">
+                <link rel="stylesheet" href="../css/bootstrap-grid.css">
+                <link rel="stylesheet" href="../css/bootstrap.css">
+                <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+                <link rel="stylesheet" href="../css/bootstrap-reboot.css">
+                <link rel="stylesheet" href="../css/ bootstrap-reboot.min.css">
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">                <link rel="stylesheet" href="../css/bootstrap.min.css">
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -22,9 +27,9 @@
                         <div class="collapse navbar-collapse"
                             id="navcol-1">
                             <ul class="nav navbar-nav ml-auto">
-                                <li class="nav-item" role="presentation"><h5 class="texto-navegador" href="participante.html">Renombrar participantes</h5></li>
-                                <li class="nav-item" role="presentation"><h5 class="texto-navegador"><button id="reiniciar-partida">Reiniciar partida</button></h5></li>
-                                <li class="nav-item" role="presentation"><h5 class="texto-navegador" href="index.html">Status</h5></li>
+                                <li class="nav-item" role="presentation"><h5 class="texto-navegador"><button class="btn btn-danger"href="participante.html">Renombrar participantes</button></h5></li>
+                                <li class="nav-item" role="presentation"><h5 class="texto-navegador"><button class="btn btn-danger" id="reiniciar-partida">Reiniciar partida</button></h5></li>
+                                <li class="nav-item" role="presentation"><h5 class="texto-navegador"><button class="btn btn-danger">Status</button></h5></li>
 
                                     
                             </ul>
@@ -34,14 +39,15 @@
                 <main class="page contact-us-page dark contenido"  style="background-color:rgba(51,0,0,255);">
                     <section class="clean-block clean-form ">
                         <div class="row justify-content-center">
-                            <div class="col-md-9">
-                                <canvas id="canvas" width="1330" height="675" ></canvas>
+                           
+                            <div class="justify-content-center">
+                                <canvas id="canvas" width="670" height="675" ></canvas>
                             </div>
-                        </div>
+                           
                     </section> 
-                </main style="background-color:rgba(51,0,0,255);">
-                <footer style="background-color:rgba(0,0,0,255);" class="page-footer dark fondo-footer">
-                    <div class="container fondo-footer">
+                </main>
+                <footer style="background-color:rgba(0,0,0,255);" class="page-footer dark ">
+                    <div class="container">
                         <div class="row">
                             <div class="col-sm-6">
                                 <h5>Soporte</h5>
@@ -69,6 +75,8 @@
                         <script src="../js/partida.js"></script>
                         <script src="../js/moneda.js"></script>
                         <script src="../js/pizarra.js"></script>
+                        <script src="../js/participante.js"></script>
+
 
             </body>       
  </html>
