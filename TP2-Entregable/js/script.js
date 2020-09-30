@@ -1,27 +1,27 @@
-document.addEventListener('DOMContentLoaded', function () {
-   // let  preguntas=false;
-   // let primerParticipante;
-   // let segundoParticipante;
-  /*  if(!preguntas){
-        let form=document.getElementById("input-formulario").addEventListener("click",function(e){
-        preguntas=true;
-        primerParticipante=document.getElementById("participante-1").value;
-        segundoParticipante=document.getElementById("participante-2").value;
-        console.log("PARTICIPANTE 1:"+primerParticipante);
-        console.log("PARTICIPANTE 2:"+segundoParticipante);
-        location.href="../html/index.html";
-        });
-    }
-    */    
-    let c=document.querySelector("#canvas");
-   let con=c.getContext("2d");
-   let partida = new Partida(c);
-   partida.nueva_partida();
-     
-            let borradoAutomatico=document.getElementById("reiniciar-partida").addEventListener("click",function(){
-                partida.nueva_partida();
-                console.log("SE REINICIO");
-            });
-    //}
-});
+document.addEventListener('DOMContentLoaded',function(){
+    let c=document.getElementById("canvas-ejercicio");
+    let partida=new Partida(c);
+    partida.nueva_partida();
+    c.addEventListener("mouseup",function(e){
+        partida.pizarron_en_uso(e.layerX,e.layerY);
+        c.removeEventListener("mousemove",movimiento,false);//SACAR
+        partida.pizarra.mostrar();
+        for(let x=0;x<partida.monedas.length;x++){
+            partida.monedas[x].mostrar(0,0,true);
+        }
+    });
+    c.addEventListener("mousedown",function(e){
+        partida.caida_cursor(e);
+        c.addEventListener("mousemove",movimiento,false);
+    });
+    let borradoAutomatico=document.getElementById("reiniciar-partida").addEventListener("click",function(){
+        partida.nueva_partida();
 
+    });
+    let status=document.getElementById("status-partida").addEventListener("click",function(){
+        partida.nueva_partida();
+    });
+    function movimiento(e){
+        partida.movimiento_cursor(e);
+    }
+});
