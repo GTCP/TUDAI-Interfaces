@@ -18,7 +18,6 @@ class Pizarra{
         this.ultimaUbicacionEje.x=this.buscar_columna(x);
         let ubicacion=0;
         while(ubicacion<this.filas){
-            console.log(ubicacion);
             if(this.monedas[this.ultimaUbicacionEje.x][ubicacion]==null){
                 this.ultimaUbicacionEje.y=1+ubicacion;
                 let x=0;let y=0;
@@ -26,7 +25,6 @@ class Pizarra{
                     x=this.ubicacion.x+5*2+7+(this.ultimaUbicacionEje.x-1)*(18+moneda.obtener_tamaño());
                 }else{
                     x=this.ubicacion.x+10+7;
-                    console.log(x);
                 }
                 if(this.ultimaUbicacionEje.y!=1){
                     y=this.ubicacion.y+this.fondo.height-moneda.obtener_tamaño()-19-+(this.ultimaUbicacionEje.y-1)*(17+moneda.obtener_tamaño());;
@@ -42,11 +40,6 @@ class Pizarra{
             ubicacion++;
         }
         return false;
-    }
-    victoria(){
-        let victoria=false;
-        return victoria;
-        //falta verificar 
     }
     buscar_columna(x){
         let ubicacion=1;
@@ -81,5 +74,31 @@ class Pizarra{
             } else {
                 return false;
         }
+    }
+   victoria(){
+    let victoria = false;
+    let max=3;
+    let ubicacion = 0;
+    let contador = 0;
+
+        if(!victoria){//verifica columna
+            for(ubicacion; ubicacion+1<this.monedas[this.ultimaUbicacionEje.x].length;ubicacion++){
+                if((this.monedas[this.ultimaUbicacionEje.x][ubicacion] != null && this.monedas[this.ultimaUbicacionEje.x][ubicacion+1] != null)&&(this.monedas[this.ultimaUbicacionEje.x][ubicacion].obtener_numero_participante() === this.monedas[this.ultimaUbicacionEje.x][ubicacion+1].obtener_numero_participante())){
+                    contador++;
+                    if(contador === max){
+                        victoria=true;
+                        ubicacion = 0;
+                        contador = 0;
+                        break;
+                    }
+                }
+                else{
+                    contador=0;
+                }
+            }
+                console.log(victoria);
+        }
+        //verifica fila
+    return victoria;    
     }
 }
