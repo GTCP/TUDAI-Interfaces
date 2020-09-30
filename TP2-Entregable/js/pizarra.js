@@ -76,29 +76,46 @@ class Pizarra{
         }
     }
    victoria(){
-    let victoria = false;
+    let victoria=false;
     let max=3;
-    let ubicacion = 0;
-    let contador = 0;
-
+    let ubicacion=0;
+    let contador=0;
         if(!victoria){//verifica columna
             for(ubicacion; ubicacion+1<this.monedas[this.ultimaUbicacionEje.x].length;ubicacion++){
-                if((this.monedas[this.ultimaUbicacionEje.x][ubicacion] != null && this.monedas[this.ultimaUbicacionEje.x][ubicacion+1] != null)&&(this.monedas[this.ultimaUbicacionEje.x][ubicacion].obtener_numero_participante() === this.monedas[this.ultimaUbicacionEje.x][ubicacion+1].obtener_numero_participante())){
+                if((this.monedas[this.ultimaUbicacionEje.x][ubicacion]!=null&&this.monedas[this.ultimaUbicacionEje.x][ubicacion+1]!=null)&&(this.monedas[this.ultimaUbicacionEje.x][ubicacion].obtener_numero_participante()===this.monedas[this.ultimaUbicacionEje.x][ubicacion+1].obtener_numero_participante())){
                     contador++;
-                    if(contador === max){
+                    if(contador===max){
                         victoria=true;
-                        ubicacion = 0;
-                        contador = 0;
-                        break;
+                        ubicacion=0;
+                        contador=0;
+                        return true;
                     }
                 }
                 else{
                     contador=0;
                 }
             }
-                console.log(victoria);
+            console.log(victoria);
         }
-        //verifica fila
+        if(!victoria){//verifica fila
+             contador=0;
+             ubicacion=0;
+             for(ubicacion=1;ubicacion<this.columnas;ubicacion++){
+                if((this.monedas[ubicacion][this.ultimaUbicacionEje.y-1]!=null&&(this.monedas[(ubicacion+1)][this.ultimaUbicacionEje.y-1]!=null))&&(this.monedas[ubicacion][this.ultimaUbicacionEje.y-1].obtener_numero_participante())===this.monedas[(ubicacion+1)][this.ultimaUbicacionEje.y-1].obtener_numero_participante()){
+                        contador++;
+                        if(contador===max){
+                            victoria=true;
+                            ubicacion=0;
+                            contador=0;
+                            return true;
+                        }
+                }
+                else{
+                    contador=0;
+                }
+            }
+        }
+        //verifica diagonales 
     return victoria;    
     }
 }
