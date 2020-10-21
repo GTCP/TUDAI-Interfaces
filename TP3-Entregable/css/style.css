@@ -1,0 +1,837 @@
+circle:nth-of-type(1) {
+  stroke-dasharray: 550; 
+}
+circle:nth-of-type(2) {
+  stroke-dasharray: 500; 
+}
+circle:nth-of-type(3) {
+  stroke-dasharray: 450;}
+circle:nth-of-type(4) {
+  stroke-dasharray: 300; 
+}
+@keyframes loading {
+  50% {
+  transform: rotate(360deg);
+  } 
+}
+@keyframes animacion {
+  0%   {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg)
+  }
+  25%  {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  50%  {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg)
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+@keyframes a {
+  from {
+    margin-left: -75%;
+    width: 25%
+  }
+  to {
+    margin-left: 175%;
+    width: 25%;
+  }
+}
+@keyframes b {
+  from {
+    margin-left: 300%;
+    width: 25%
+  }
+  to {
+    margin-left: 55%;
+    width: 25%;
+  }
+}
+.portadalibro{
+  background-image: url('../css/images/libro.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#anillo1{
+  width: 80px;
+  height: 80px;
+  transition: all 10s ease-in-out;
+  animation-name: a;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+#anillo2{
+  width: 80px;
+  height: 80px;
+  transition: all 4s ease-in-out;
+  animation-duration: 7s;
+  animation-name: b;
+  animation-iteration-count: infinite;
+}
+#anillo3{
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  animation-name: animacion;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+.loading{
+  margin-top: 25%;
+  margin-left: 25%;
+  animation-name: loading;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;  
+}
+.portadaAnimada {
+  animation-duration: 3s;
+  animation-name: entrando;
+  animation-name: entrando2;
+  animation: rotate 3s infinite;
+  animation-name: rotate;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+  @keyframes rotate {
+  0% {
+  transform: rotate(5deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+  }
+@keyframes entrando {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+  from {
+    margin-left: 0%;
+    width: 100%;
+  }
+  to {
+    margin-left: 100%;
+    width: 300%
+  }
+}
+@keyframes entrando2 {
+  from {
+    margin-left: 0%;
+    width: 100%;
+  }
+  to {
+    margin-left: 100%;
+    width: 300%
+  }
+}
+nav{
+  position: absolute;
+  top:3%;
+  left: 5%;
+  display: block;
+  padding: .5rem 1rem;
+  color: rgba(0,0,0,0);
+}
+.gallery{
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  background-image: url("/css/images/gallery/1.jpg");
+  background-repeat: no-repeat;
+}
+.cambio{
+  max-width: 500px;
+  margin: auto;
+  padding: 40px;
+}
+.conteo {
+  position: relative;
+  background-color: #343a40;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+.conteo.cubrir {
+  position: absolute;
+  background-color: aquamarine;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: .3;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+.h1, h1 {
+  font-size: 2.5rem;
+}
+.form-fila {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+.columna-12 {
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.btn:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: pointer;
+}
+.tolkien{
+  background-image: url('/css/images/portada2.jpg');
+  background-repeat: no-repeat;
+}
+.portada-repetitiva{
+  background-image: url('../css/images/abecedario-elfico.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.tolkien2{
+  background-image: url('../css/images/tolkien2.png');
+  background-repeat: no-repeat;
+}
+.tolkien3{
+  background-image: url('../css/images/tolkien3.png');
+  background-repeat: no-repeat;
+}
+.menu>a:hover{
+  background-color: #FFF7;
+  border-radius: 5px;
+}
+nav>.menu>a:hover{
+  color:black;
+  background-color: white;
+  border-radius: 5px;
+}
+.verEvento{
+  display: none;
+}
+.verEvento2{
+  display: none;
+}
+.verEvento3{
+  display: none;
+}
+.ver{
+  display: none;
+}
+.carta {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.portada1{
+  background-image: url('../css/images/portadaprincijpg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.portada{
+  background-image: url('../css/images/mordor.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  .contactomagico2{
+    animation: rotate 3s infinite;
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 3;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    }
+    @keyframes rotate {
+    0% {
+    transform: rotate(-100deg);
+    }
+    10%{
+      transform: rotate(-90deg);
+    }
+    20%{
+      transform: rotate(-80deg);
+    }
+    30%{
+      transform: rotate(-70deg);
+    }
+    40% {
+      transform: rotate(-60deg);
+      }
+    50% {
+    transform: rotate(-50deg);
+    }
+    60% {
+      transform: rotate(-40deg);
+    }
+    70% {
+      transform: rotate(-30deg);
+    }
+    80% {
+      transform: rotate(-20deg);
+    }
+    90% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+.contactomagico{
+  animation: rotate 3s infinite;
+  animation-name: rotate;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 2;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  }
+  @keyframes rotate {
+  0% {
+  transform: rotate(0deg);
+  }
+  10%{
+    transform: rotate(10deg);
+  }
+  20%{
+    transform: rotate(20deg);
+  }
+  30%{
+    transform: rotate(30deg);
+  }
+  40% {
+    transform: rotate(40deg);
+    }
+  50% {
+  transform: rotate(50deg);
+  }
+  60% {
+    transform: rotate(60deg);
+  }
+  70% {
+    transform: rotate(70deg);
+  }
+  80% {
+    transform: rotate(80deg);
+  }
+  90% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(100deg);
+  }
+}
+.marcar{
+  color: white;
+}
+p {
+  animation-duration: 3s;
+  animation-name: derechaAlCentro2;
+}
+.entradaPorIzquierda{
+  animation-duration: 3s;
+  animation-name: izquierdaAlCentro;
+}
+.img {
+  animation-duration: 3s;
+  animation-name: izquierdaAlCentro;
+}
+@keyframes izquierdaAlCentro {
+  from {
+    margin-left: 100%;
+    width: 500%
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+@keyframes derechaAlCentro2 {
+  from {
+    margin-right: 150%;
+    width: 0%
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+@keyframes derechaAlCentro{
+  from {
+    margin-right: 150%;
+    width: 0%
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+.derechaAlCentro {
+  animation-duration: 2s;
+  animation-name: derechaAlCentro;
+}
+.derechaAlCentro {
+  animation-duration: 4s;
+  animation-name: derechaAlCentro;
+}
+.derechaAlCentro2 {
+  animation-duration: 4s;
+  animation-name: derechaAlCentro;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  margin: 0;
+  font-family: Montserrat,sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav1 {
+  position: relative;
+  padding: .5rem 1rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  top: 0;
+}
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+.rotar{
+  -moz-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  -webkit-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+.nav2 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.marcar:focus, .marcar:hover {
+  text-decoration: none;
+  color:white;
+}
+.marcar { 
+  padding-right: 2rem;
+  display: block;
+  padding: .5rem 1rem;
+  font-weight: 600;
+  font-size: .8rem;
+  text-transform: uppercase;
+  color: white;
+}
+ .marcar1 {
+  padding-right: 2rem;
+  display: block;
+  padding: .5rem 1rem;
+  font-weight: 600;
+  font-size: .8rem;
+  text-transform: uppercase;
+  color: black;
+}
+.marcar1:focus, .marcar1:hover {
+  text-decoration: none;
+  color:black;
+}
+.footer {
+  padding-top: 30px;
+  text-align: center;
+}
+@media (min-width:1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width:992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width:768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width:576px) {
+  .columna-sm-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+.portadaindex {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .columna-12, .col-auto, .col-lg, .col-lg-1, .columna-lg-2, .col-lg-3, .columna-lg-4, .col-lg-5, .columna-lg-6, .col-lg-7, .columna-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-auto, .col-md, .col-md-1, .columna-md-2, .columna-md-3, .col-md-4, .columna-md-5, .columna-md-6, .col-md-7, .col-md-8, .columna-md-9, .columna-md-10, .col-md-11, .col-md-12, .col-md-auto, .col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .columna-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .columna-xl-7, .col-xl-8, .columna-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-auto {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.footer h5 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 30px;
+}
+.h5, h5 {
+  font-size: 1.25rem;
+}
+.footer.dark {
+  background-color: #2b2f31;
+}
+@media (min-width:576px) {
+  .footer {
+    text-align: left;
+  }
+}
+.fila {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.footer.dark h5 {
+  color: #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+.dark a:focus, .dark a:hover {
+  color: #fff;
+}
+.dark a:focus, .dark a:hover {
+  text-decoration: none;
+  color: #1d2125;
+}
+.dark a {
+  color: #d2d1d1;
+}
+.dark a {
+  color: #53595f;
+  text-decoration: none;
+}
+.abajo{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.footer.dark .copyright {
+  background-color: #222425;
+  border-color: #222425;
+}
+.copyright-2 {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: center;
+  margin-top: 50px;
+}
+.copyright-2 p {
+  color: #ccc;
+}
+.footer .copyright-2 p {
+  margin: 10px;
+  color: #7d8288;
+}
+.footer .copyright {
+  background-color: #fff;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: center;
+  margin-top: 50px;
+  border: 1px solid #ededed;
+}
+.footer.dark .copyright p {
+  color: #ccc;
+}
+.footer .copyright p {
+  margin: 10px;
+  color: #7d8288;
+}
+.h2, h2 {
+  font-size: 2rem;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.caja-input {
+  margin-bottom: 1rem;
+}
+.input:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+}
+.input {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+@media (min-width:576px) {
+  .portadaindex.hero {
+    min-height: 680px;
+    display: block;
+
+  }
+}
+.portadaindex.hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+.info {
+  color: #3b99e0!important;
+}
+.block .heading {
+  padding-top: 50px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.align-items-center {
+  -ms-flex-align: center!important;
+  align-items: center!important;
+}
+@media (min-width:768px) {
+  .columna-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+@media (min-width:768px) {
+  .block.clean-info h3 {
+    margin-top: 0;
+  }
+}
+.block.clean-info h3 {
+  margin-top: .8em;
+  margin-bottom: .6em;
+}
+.h3, h3 {
+  font-size: 1.75rem;
+}
+.justificar {
+  -ms-flex-pack: center!important;
+  justify-content: center!important;
+}
+dl, ol, ul {
+  margin-top: 0;
+}
+address, dl, ol, ul {
+  margin-bottom: 1rem;
+}
+@media (min-width:576px) {
+  .columna-sm-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+.clean-carta {
+  box-shadow: 0 2px 10px rgba(0,0,0,.075);
+  border-radius: 3px;
+  margin-bottom: 40px;
+  border: 1px solid #eaeaea;
+}
+.h4, h4 {
+  font-size: 1.5rem;
+}
+.d3:hover{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px 0 #ccc,
+                0 2px 0 #c9c9c9,
+                0 3px 0 #bbb, 
+                0 4px 0 #b9b9b9, 
+                0 5px 0 #aaa, 
+                0 6px 1px rgba(0, 0, 0, .1), 
+                0 0 5px rgba(0, 0, 0, .1), 
+                0 1px 3px rgba(0, 0, 0, .3), 
+                0 3px 5px rgba(0, 0, 0, .2), 
+                0 5px 10px rgba(0, 0, 0, .25), 
+                0 10px 10px rgba(0, 0, 0, .2),
+                0 20px 20px rgba(0, 0, 0, .15) ;   
+}
+  .zoom:hover{
+    transform: scale(1.3);
+    opacity: 1;
+  }
+.eventospersonajes.compacto  .item .description {
+  display: grid;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  font-size: 17px;
+  line-height: 18px;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  opacity: 1;
+  color: #fff;
+  transition: .8s ease;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+  background: linear-gradient(180deg,transparent,rgba(0,0,0,.39));
+}
+@media (min-width:576px) {
+  .eventospersonajes.compacto  .item .description {
+    opacity: 0;
+  }
+}
+@media (min-width:576px) {
+  .eventospersonajes.compacto  .item a:hover .description {
+    opacity: 1;
+  }
+}
+@media (min-width:992px) {
+  .columna-lg-4 {
+    -ms-flex: 0 0 33.33333%;
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+}
+.eventospersonajes {
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
