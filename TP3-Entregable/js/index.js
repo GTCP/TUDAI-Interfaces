@@ -130,14 +130,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if(presente==0||presente>max){
             presente=1;
         }
-        carrou.style.backgroundImage = "url(./css/images/gallery/"+presente+".jpg)";
+        carrou.style.backgroundImage = "url(../css/images/gallery/"+presente+".jpg)";
         presente++;
     });
     atras.addEventListener('click', function(){
         if(presente==0||presente>max){
             presente=max;
         }
-        carrou.style.backgroundImage="url(./css/images/gallery/"+presente+".jpg)";
+        carrou.style.backgroundImage="url(../css/images/gallery/"+presente+".jpg)";
         presente--;
     });
 });
